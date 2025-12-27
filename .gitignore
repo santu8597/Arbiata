@@ -1,4 +1,32 @@
-/node_modules
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Hardhat
+cache/
+artifacts/
+typechain-types/
+
+# Environment
 .env
-.env.example
 .env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+*.log
+npm-debug.log*
+
+# Test
+coverage/
+coverage.json

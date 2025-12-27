@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --pure-black: #000000;
+  --charcoal: #0B0B0B;
+  --graphite: #141414;
+  --metallic-silver: #BFC3C7;
+  --steel-gray: #2A2A2A;
+  --gunmetal: #1C1C1C;
+  --text-primary: #FFFFFF;
+  --text-secondary: #9A9A9A;
+  --text-tertiary: #C7C7C7;
+  --profit: #C0392B;
+  --loss: #555555;
+  --warning: #D4A84B;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--pure-black);
+  color: var(--text-primary);
+}
+
+/* Glassmorphic card */
+.glass-card {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+
+/* Monospace numbers */
+.mono {
+  font-family: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', monospace;
+}
+
+/* Subtle hover effect */
+.hover-subtle {
+  transition: all 0.15s ease;
+}
+
+.hover-subtle:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Button styles */
+.btn-execute {
+  background: var(--graphite);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-execute:hover:not(:disabled) {
+  background: var(--steel-gray);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-execute:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Status indicators */
+.status-execute {
+  color: var(--profit);
+}
+
+.status-skip {
+  color: var(--text-secondary);
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+}
